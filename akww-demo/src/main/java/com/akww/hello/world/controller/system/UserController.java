@@ -1,4 +1,4 @@
-package com.akww.hello.world.controller;
+package com.akww.hello.world.controller.system;
 
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import io.swagger.annotations.Api;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.akww.hello.world.pojo.User;
-import com.akww.hello.world.service.IUserService;
+import com.akww.hello.world.pojo.system.User;
+import com.akww.hello.world.service.system.IUserService;
 
 import java.util.UUID;
 
@@ -26,8 +26,8 @@ public class UserController {
     @ApiImplicitParam(name = "user",value = "user",required = true,dataType = "User")
     @PostMapping("saveUser")
     public String saveUser(@RequestBody User user){
-        if(StringUtils.isBlank(user.getId())){
-            user.setId(UUID.randomUUID().toString().replace("-",""));
+        if(StringUtils.isBlank(user.getUserId())){
+            user.setUserId(UUID.randomUUID().toString().replace("-",""));
         }
         return userService.save(user) ? "OK" : "error";
     }

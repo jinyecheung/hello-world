@@ -1,4 +1,4 @@
-package com.akww.hello.world.pojo;
+package com.akww.hello.world.pojo.system;
 
 
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -12,20 +12,20 @@ import java.io.Serializable;
 
 @Data
 @ApiModel(value = "User",description = "用户实体对象")
-@TableName("t_user")
+@TableName("t_sys_user")
 public class User implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id")
-    @ApiModelProperty("id")
-    private String id;
+    @TableId(value = "user_id")
+    @ApiModelProperty("userId")
+    private String userId;
 
-    @TableField("username")
-    @ApiModelProperty("username")
-    private String username;
+    @TableField("user_name")
+    @ApiModelProperty("userName")
+    private String userName;
 
-    @TableField("password")
-    @ApiModelProperty("password")
-    private String password;
+    @TableField("pass_word")
+    @ApiModelProperty("passWord")
+    private String passWord;
 }
