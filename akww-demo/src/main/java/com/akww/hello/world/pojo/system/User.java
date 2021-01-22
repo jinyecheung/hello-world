@@ -28,4 +28,12 @@ public class User implements Serializable{
     @TableField("pass_word")
     @ApiModelProperty("passWord")
     private String passWord;
+
+    @TableField("phone")
+    @ApiModelProperty("phone")
+    private String phone;
+
+    @TableField("email")
+    @ApiModelProperty("email")
+    private String email;
 }
